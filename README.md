@@ -2,6 +2,7 @@
 
 Public demonstration of deterministic invoice validation for ERP and finance systems.
 
+![CI](https://github.com/magnus-ove/norquantia-engine-demo/actions/workflows/ci.yml/badge.svg)
 ![Python](https://img.shields.io/badge/python-3.12-blue)
 ![Status](https://img.shields.io/badge/status-active-success)
 
