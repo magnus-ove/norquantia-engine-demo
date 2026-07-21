@@ -1,0 +1,8 @@
+[project]
+name = "norquantia-engine-demo"
+version = "0.1.0"
+description = "Public demonstration of deterministic invoice validation."
+requires-python = ">=3.12"
+
+[project.scripts]
+norquantia-demo = "norquantia_demo.cli:main"
