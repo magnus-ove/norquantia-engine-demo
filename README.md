@@ -1,4 +1,10 @@
+<div align="center">
+
 # Norquantia Engine Demo
+
+### Deterministic Invoice Validation
+
+**ERP • Finance • Tax • AI Ready**
 
 Public demonstration of deterministic invoice validation for ERP and finance systems.
 
@@ -6,6 +12,8 @@ Public demonstration of deterministic invoice validation for ERP and finance sys
 ![CI](https://github.com/magnus-ove/norquantia-engine-demo/actions/workflows/ci.yml/badge.svg)
 ![Python](https://img.shields.io/badge/python-3.12-blue)
 ![Status](https://img.shields.io/badge/status-active-success)
+
+</div>
 
 ---
 
@@ -16,6 +24,7 @@ Public demonstration of deterministic invoice validation for ERP and finance sys
 - JSON diagnostics output
 - Synthetic invoice examples
 - Automated testing
+- GitHub Actions CI
 
 ---
 
@@ -24,16 +33,16 @@ Public demonstration of deterministic invoice validation for ERP and finance sys
 ```text
 Invoice JSON
       ↓
- Validation Rules
+Validation Rules
       ↓
- Diagnostics
+Diagnostics
       ↓
- JSON Result
+JSON Result
 ```
 
 ---
 
-## Example
+## Example Usage
 
 ```bash
 norquantia-demo analyze examples/invoice_valid.json
@@ -43,42 +52,59 @@ Expected output:
 
 ```json
 {
-  "status": "PASS",
-  "rules_evaluated": 2,
-  "passed": 2,
-  "failed": 0
+  "status": "PASS"
+}
+```
+
+Invalid invoice example:
+
+```json
+{
+  "status": "FAIL",
+  "message": "Invoice total mismatch."
 }
 ```
 
 ---
 
-This repository intentionally excludes:
+## Scope
+
+This public repository intentionally excludes:
 
 - Country-specific tax logic
 - Proprietary mappings
 - Customer integrations
 - AI reasoning
-- Proprietary Norquantia technologies
+- Commercial Norquantia IP
 
-## Example usage
+---
 
-```bash
-norquantia-demo analyze examples/invoice_valid.json
-```
+## Vision
 
-Expected result:
+Norquantia Engine Demo showcases selected public capabilities related to deterministic validation for ERP and finance systems.
 
-```json
-{
-  "status": "PASS"
-}
-```
+Commercial Norquantia technology, proprietary tax engines, customer integrations and AI workflows are intentionally excluded from this repository.
+
+---
 
 ## Roadmap
 
-- [x] Package structure
-- [x] CLI entrypoint
-- [ ] Invoice analysis command
-- [ ] JSON diagnostics
-- [ ] Automated tests
-- [ ] CI pipeline
+### v0.1.0
+- Initial public demonstration release
+- Arithmetic validation
+- PASS / FAIL diagnostics
+- Python package structure
+- CLI interface
+- Automated testing
+- GitHub Actions CI
+
+### v0.2.0
+- Enhanced diagnostics
+- Batch invoice processing
+- Improved JSON output
+- Additional validation rules
+
+### Future
+- HTML reporting
+- ERP integrations
+- Norquantia Flow compatibility
