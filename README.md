@@ -44,6 +44,14 @@ JSON Result
 
 ## Example Usage
 
+The valid example exits with status `0`:
+
+```bash
+norquantia-demo analyze examples/invoice_valid.json
+```
+
+The invalid example exits with status `1`:
+
 ```bash
 norquantia-demo analyze examples/invoice_invalid.json
 ```

@@ -9,12 +9,42 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Check out repository
+        uses: actions/checkout@v4
 
-      - uses: actions/setup-python@v5
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v5
         with:
           python-version: "3.12"
 
-      - run: pip install -e .
-      - run: pip install pytest
-      - run: pytest
+      - name: Install project and development dependencies
+        run: python -m pip install ".[dev]"
+
+      - name: Run tests
+        run: python -m pytest -p no:cacheprovider
+
+      - name: Run Ruff
+        run: ruff check --no-cache .
+
+      - name: Verify documented CLI examples
+        shell: bash
+        run: |
+          set +e
+          valid_output="$(norquantia-demo analyze examples/invoice_valid.json)"
+          valid_status=$?
+          invalid_output="$(norquantia-demo analyze examples/invoice_invalid.json)"
+          invalid_status=$?
+          set -e
+
+          if [ "$valid_status" -ne 0 ]; then
+            echo "Valid example exited with $valid_status; expected 0." >&2
+            exit 1
+          fi
+
+          if [ "$invalid_status" -ne 1 ]; then
+            echo "Invalid example exited with $invalid_status; expected 1." >&2
+            exit 1
+          fi
+
+          printf '%s\n' "$valid_output" | python -m json.tool > /dev/null
+          printf '%s\n' "$invalid_output" | python -m json.tool > /dev/null
