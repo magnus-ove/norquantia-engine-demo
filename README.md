@@ -17,6 +17,18 @@ Public demonstration of deterministic invoice validation for ERP and finance sys
 
 ---
 
+## Public Demonstration Notice
+
+This repository is a public demonstration of deterministic validation concepts.
+It contains only synthetic examples and public demo logic. It does not contain
+the proprietary Norquantia Core Engine, production rule sets, benchmark datasets,
+customer data or customer integrations, or commercial production implementations.
+
+The production Norquantia Core Engine remains private and is maintained separately
+from this public demonstration repository.
+
+---
+
 ## Features
 
 - Deterministic invoice arithmetic validation
@@ -129,3 +141,9 @@ Commercial Norquantia technology, proprietary tax engines, customer integrations
 - HTML reporting
 - ERP integrations
 - Norquantia Flow compatibility
+
+---
+
+## License
+
+This public demonstration repository is available under the [MIT License](LICENSE).
