@@ -100,7 +100,7 @@ norquantia-demo analyze examples/invoice_invalid.json
   ],
   "metadata": {
     "engine": "Norquantia Engine Demo",
-    "engineVersion": "0.1.0",
+    "engineVersion": "0.2.0",
     "deterministic": true
   }
 }
@@ -131,7 +131,7 @@ Commercial Norquantia technology, proprietary tax engines, customer integrations
 
 ---
 
-## Roadmap
+## Releases and Roadmap
 
 ### v0.1.0
 - Initial public demonstration release
@@ -143,10 +143,10 @@ Commercial Norquantia technology, proprietary tax engines, customer integrations
 - GitHub Actions CI
 
 ### v0.2.0
-- Enhanced diagnostics
-- Batch invoice processing
-- Improved JSON output
-- Additional validation rules
+- Deterministic invoice validation
+- Stable structured JSON diagnostics
+- CLI verification examples and automated checks
+- Clear separation from proprietary Norquantia technology
 
 ### Future
 - HTML reporting
