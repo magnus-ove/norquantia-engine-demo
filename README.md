@@ -4,7 +4,7 @@
 
 ### Deterministic Invoice Validation
 
-**ERP • Finance • Tax • AI Ready**
+**ERP • Finance • Tax • Structured JSON**
 
 Public demonstration of deterministic invoice validation for ERP and finance systems.
 
@@ -32,7 +32,7 @@ from this public demonstration repository.
 ## Features
 
 - Deterministic invoice arithmetic validation
-- Document sign consistency checks
+- Synthetic document-type and invoice-number checks
 - Stable JSON diagnostics, summary, and metadata output
 - Synthetic invoice examples
 - Automated testing
@@ -50,6 +50,17 @@ Validation Rules
 Diagnostics
       ↓
 JSON Result
+```
+
+---
+
+## Installation
+
+Norquantia Engine Demo requires Python 3.12 or newer. Install the project and
+development tools from the repository root:
+
+```bash
+python -m pip install ".[dev]"
 ```
 
 ---
@@ -125,7 +136,7 @@ Commercial Norquantia technology, proprietary tax engines, customer integrations
 ### v0.1.0
 - Initial public demonstration release
 - Arithmetic validation
-- PASS / FAIL diagnostics
+- Structured validation diagnostics
 - Python package structure
 - CLI interface
 - Automated testing
