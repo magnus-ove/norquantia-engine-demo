@@ -21,7 +21,7 @@ Public demonstration of deterministic invoice validation for ERP and finance sys
 
 - Deterministic invoice arithmetic validation
 - Document sign consistency checks
-- JSON diagnostics output
+- Stable JSON diagnostics, summary, and metadata output
 - Synthetic invoice examples
 - Automated testing
 - GitHub Actions CI
@@ -45,25 +45,38 @@ JSON Result
 ## Example Usage
 
 ```bash
-norquantia-demo analyze examples/invoice_valid.json
+norquantia-demo analyze examples/invoice_invalid.json
 ```
-
-Expected output:
 
 ```json
 {
-  "status": "PASS"
+  "documentType": "invoice",
+  "validationStatus": "invalid",
+  "summary": {
+    "errors": 1,
+    "warnings": 0,
+    "checksPerformed": 3
+  },
+  "diagnostics": [
+    {
+      "code": "DEMO_TOTAL_MISMATCH",
+      "severity": "error",
+      "field": "total",
+      "message": "Synthetic subtotal plus tax does not match total.",
+      "expected": "1250",
+      "actual": "1400"
+    }
+  ],
+  "metadata": {
+    "engine": "Norquantia Engine Demo",
+    "engineVersion": "0.1.0",
+    "deterministic": true
+  }
 }
 ```
 
-Invalid invoice example:
-
-```json
-{
-  "status": "FAIL",
-  "message": "Invoice total mismatch."
-}
-```
+All checks and examples in this repository are intentionally synthetic and are
+independent of the private Norquantia Core Engine.
 
 ---
 
